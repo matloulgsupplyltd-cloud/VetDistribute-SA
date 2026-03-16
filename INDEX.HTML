@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetDistribute SA | Licensed FMD Vaccine Distribution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sa-earth': '#8B6F47',
+                        'sa-green': '#2D5A3D',
+                        'sa-gold': '#D4AF37',
+                        'sa-sky': '#87CEEB',
+                        'sa-dark': '#1C1917',
+                        'sa-light': '#F5F5DC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #1C1917 0%, #2D5A3D 50%, #1C1917 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .strain-badge {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+        }
+        .cold-chain-pulse {
+            animation: pulse-blue 2s infinite;
+        }
+        @keyframes pulse-blue {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(135, 206, 235, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(135, 206, 235, 0); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #D4AF37, #2D5A3D);
+        }
+    </style>
+</head>
+<body class="font-sans text-sa-dark bg-stone-50">
+
+    <!-- Emergency Banner -->
+    <div class="bg-red-700 text-white text-center py-2 px-4 text-sm font-semibold tracking-wide">
+        <i class="fas fa-exclamation-circle mr-2"></i>
+        OUTBREAK RESPONSE MODE: 24-48 Hour Delivery to Gauteng, KZN & Eastern Cape
+        <span class="hidden md:inline ml-4">| Emergency Hotline: 0800 VET FMD (0800 838 363)</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-sa-green rounded-lg flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-sa-green tracking-tight">VetDistribute SA</h1>
+                        <p class="text-xs text-sa-earth font-medium tracking-wider">LICENSED FMD VACCINE DISTRIBUTORS</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-stone-600 hover:text-sa-green font-medium transition">Home</a>
+                    <a href="#services" class="text-stone-600 hover:text-sa-green font-medium transition">Services</a>
+                    <a href="#strains" class="text-stone-600 hover:text-sa-green font-medium transition">Vaccine Strains</a>
+                    <a href="#process" class="text-stone-600 hover:text-sa-green font-medium transition">How It Works</a>
+                    <a href="#compliance" class="text-stone-600 hover:text-sa-green font-medium transition">Compliance</a>
+                    <a href="#contact" class="bg-sa-green text-white px-6 py-2.5 rounded-full font-semibold hover:bg-sa-green/90 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Order Vaccines
+                    </a>
+                </div>
+
+                <button class="md:hidden text-stone-600 text-2xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-md">Home</a>
+                <a href="#services" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-md">Services</a>
+                <a href="#strains" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-md">Vaccine Strains</a>
+                <a href="#process" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-md">How It Works</a>
+                <a href="#compliance" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-md">Compliance</a>
+                <a href="#contact" class="block px-3 py-2 text-sa-green font-semibold">Order Vaccines</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.05&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-white space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-sm font-medium tracking-wider">DAFF LICENSED DISTRIBUTOR</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight text-shadow">
+                    Rapid FMD Vaccine <span class="text-sa-gold">Distribution</span> for South African Farmers
+                </h1>
+                
+                <p class="text-xl text-stone-300 leading-relaxed max-w-lg">
+                    Licensed supply of SAT1, SAT2, SAT3 & O strain vaccines with guaranteed cold chain integrity. 24-48 hour delivery during outbreaks.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-sa-gold text-sa-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-xl flex items-center justify-center space-x-2 group">
+                        <span>Emergency Order</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="#services" class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition backdrop-blur-sm flex items-center justify-center">
+                        <span>Our Services</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                    <div>
+                        <p class="text-3xl font-bold text-sa-gold">24-48h</p>
+                        <p class="text-sm text-stone-400">Outbreak Response</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-sa-gold">2-8°C</p>
+                        <p class="text-sm text-stone-400">Cold Chain Maintained</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-sa-gold">100%</p>
+                        <p class="text-sm text-stone-400">DAFF Compliant</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative hidden md:block">
+                <div class="absolute inset-0 bg-sa-gold/20 rounded-3xl transform rotate-3"></div>
+                <div class="relative bg-white p-8 rounded-3xl shadow-2xl space-y-6">
+                    <div class="flex items-center justify-between border-b border-stone-200 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-sa-green/10 rounded-full flex items-center justify-center text-sa-green">
+                                <i class="fas fa-truck-medical"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sa-dark">Live Tracking</p>
+                                <p class="text-xs text-stone-500">GPS Monitored Delivery</p>
+                            </div>
+                        </div>
+                        <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">ACTIVE</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-stone-600">Current Temperature</span>
+                                <span class="text-2xl font-bold text-sa-green">4.2°C</span>
+                            </div>
+                            <div class="w-full bg-stone-200 rounded-full h-2">
+                                <div class="bg-sa-green h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <p class="text-xs text-stone-500 mt-2">Optimal range: 2-8°C</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 text-center">
+                                <i class="fas fa-syringe text-2xl text-blue-600 mb-2"></i>
+                                <p class="text-xs font-semibold text-blue-900">SAT2 Vaccine</p>
+                                <p class="text-xs text-blue-700">In Transit</p>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 text-center">
+                                <i class="fas fa-map-marker-alt text-2xl text-amber-600 mb-2"></i>
+                                <p class="text-xs font-semibold text-amber-900">KZN Region</p>
+                                <p class="text-xs text-amber-700">ETA 6 Hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-sa-green/5 p-4 rounded-xl border border-sa-green/20">
+                        <p class="text-xs text-sa-green font-semibold mb-1">STRAIN COVERAGE</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="strain-badge text-white text-xs font-bold px-3 py-1 rounded-full">SAT1</span>
+                            <span class="strain-badge text-white text-xs font-bold px-3 py-1 rounded-full">SAT2</span>
+                            <span class="strain-badge text-white text-xs font-bold px-3 py-1 rounded-full">SAT3</span>
+                            <span class="bg-stone-600 text-white text-xs font-bold px-3 py-1 rounded-full">O</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-stone-50 to-transparent"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                <span class="text-sa-green font-semibold tracking-wider text-sm uppercase">Our Services</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-sa-dark mt-3 mb-6">Complete Vaccine Distribution Solutions</h2>
+                <p class="text-stone-600 text-lg">We bridge the gap between vaccine manufacturers and farmers, ensuring rapid, compliant delivery of FMD vaccines during critical outbreak periods.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="group hover-lift bg-stone-50 rounded-2xl p-8 border border-stone-200 scroll-reveal">
+                    <div class="w-14 h-14 bg-sa-green/10 rounded-2xl flex items-center justify-center text-sa-green text-2xl mb-6 group-hover:bg-sa-green group-hover:text-white transition-colors">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-3">Vaccine Procurement</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">Direct sourcing from DAFF and ARC Onderstepoort Veterinary Institute. Only approved, registered vaccines supplied.</p>
+                    <ul class="text-xs text-stone-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-sa-green mr-2"></i>SAT1/SAT2/SAT3 Strains</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sa-green mr-2"></i>O Strain Available</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sa-green mr-2"></i>Bulk & Individual Orders</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group hover-lift bg-stone-50 rounded-2xl p-8 border border-stone-200 scroll-reveal">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors cold-chain-pulse">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-3">Cold Chain Logistics</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">Refrigerated transport maintaining 2-8°C throughout the supply chain with real-time GPS tracking and temperature monitoring.</p>
+                    <ul class="text-xs text-stone-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Validated Refrigeration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>GPS Fleet Tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Port-to-Farm Delivery</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group hover-lift bg-stone-50 rounded-2xl p-8 border border-stone-200 scroll-reveal">
+                    <div class="w-14 h-14 bg-sa-gold/20 rounded-2xl flex items-center justify-center text-sa-earth text-2xl mb-6 group-hover:bg-sa-gold group-hover:text-white transition-colors">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-3">Rapid Fulfillment</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">Emergency outbreak response with prioritized delivery schedules. 24-48 hours in outbreak zones, 1-3 days nationwide.</p>
+                    <ul class="text-xs text-stone-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-sa-earth mr-2"></i>24-48h Outbreak Areas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sa-earth mr-2"></i>1-3 Days National</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sa-earth mr-2"></i>Emergency Dispatch</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group hover-lift bg-stone-50 rounded-2xl p-8 border border-stone-200 scroll-reveal">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-3">Farmer Support</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">Technical guidance on vaccination protocols, dosage calculations, and post-vaccination monitoring procedures.</p>
+                    <ul class="text-xs text-stone-500 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Protocol Guidance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Dosage Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>7-Day Follow-up</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="mt-16 bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl scroll-reveal">
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-info-circle text-red-500 text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-red-900 mb-2">Important Service Limitations</h4>
+                        <p class="text-red-800 text-sm leading-relaxed">
+                            We do <strong>not</strong> administer vaccinations, <strong>do not</strong> manufacture vaccines, and <strong>do not</strong> export internationally. 
+                            We are strictly a licensed distribution and logistics provider for registered FMD vaccines within South Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vaccine Strains Section -->
+    <section id="strains" class="py-24 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="text-sa-green font-semibold tracking-wider text-sm uppercase">Vaccine Portfolio</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-sa-dark mt-3 mb-6">Southern African Territories (SAT) Strain Coverage</h2>
+                    <p class="text-stone-600 text-lg mb-8 leading-relaxed">
+                        South Africa's FMD landscape is unique, with SAT1, SAT2, and SAT3 being the most widely represented serotypes in the region. We distribute vaccines matched to current circulating strains including the O serotype for comprehensive protection.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                            <div class="w-12 h-12 bg-sa-green/10 rounded-lg flex items-center justify-center font-bold text-sa-green">SAT1</div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-sa-dark">SAT1 Strain</p>
+                                <p class="text-sm text-stone-500">SAR/9/81 & KNP/196/91 vaccine strains available</p>
+                            </div>
+                            <i class="fas fa-shield-alt text-sa-green"></i>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center font-bold text-blue-600">SAT2</div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-sa-dark">SAT2 Strain</p>
+                                <p class="text-sm text-stone-500">KNP/19/89/2 & ZIM/7/83 profiles</p>
+                            </div>
+                            <i class="fas fa-shield-alt text-blue-600"></i>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                            <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center font-bold text-amber-600">SAT3</div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-sa-dark">SAT3 Strain</p>
+                                <p class="text-sm text-stone-500">Complete serotype coverage for SA region</p>
+                            </div>
+                            <i class="fas fa-shield-alt text-amber-600"></i>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                            <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center font-bold text-purple-600">O</div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-sa-dark">O Serotype</p>
+                                <p class="text-sm text-stone-500">Available for cross-protection requirements</p>
+                            </div>
+                            <i class="fas fa-shield-alt text-purple-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative scroll-reveal">
+                    <div class="absolute inset-0 bg-sa-green/10 rounded-3xl transform -rotate-2"></div>
+                    <div class="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-stone-200">
+                        <div class="bg-sa-green p-6 text-white">
+                            <h3 class="font-serif text-2xl font-bold mb-2">Vaccine Efficacy Data</h3>
+                            <p class="text-sa-light/80 text-sm">Based on ARC Onderstepoort research and field studies</p>
+                        </div>
+                        <div class="p-6 space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm font-semibold text-sa-dark">Cross-protection (SAT1)</span>
+                                    <span class="text-sm font-bold text-sa-green">75% Coverage</span>
+                                </div>
+                                <div class="w-full bg-stone-200 rounded-full h-2">
+                                    <div class="bg-sa-green h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-xs text-stone-500 mt-1">r1-values >0.3 indicate efficient cross-protection</p>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm font-semibold text-sa-dark">Oil-adjuvanted Formulation</span>
+                                    <span class="text-sm font-bold text-blue-600">W/O/W</span>
+                                </div>
+                                <div class="w-full bg-stone-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                                <p class="text-xs text-stone-500 mt-1">Water-in-oil-in-water modern adjuvant technology</p>
+                            </div>
+                            
+                            <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
+                                <p class="text-xs text-stone-600 leading-relaxed">
+                                    <strong>Note:</strong> Vaccine selection should be based on current circulating strains in your specific region. Contact our technical team for strain matching advice specific to Gauteng, KZN, Eastern Cape, or Limpopo outbreaks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section id="process" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(#2D5A3D 1px, transparent 1px); background-size: 30px 30px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                <span class="text-sa-green font-semibold tracking-wider text-sm uppercase">Our Process</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-sa-dark mt-3 mb-6">From Inquiry to Follow-up</h2>
+                <p class="text-stone-600 text-lg">Streamlined procurement process designed for urgency during outbreak situations while maintaining full regulatory compliance.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line rounded-full"></div>
+
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative scroll-reveal">
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-12 h-12 bg-sa-gold rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">1</div>
+                        <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                            <div class="md:text-right md:pr-12">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-200 hover-lift inline-block md:text-left">
+                                    <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green text-xl mb-4 md:ml-auto md:mr-0">
+                                        <i class="fas fa-file-medical-alt"></i>
+                                    </div>
+                                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-2">Farmer Inquiry</h3>
+                                    <p class="text-stone-600 text-sm">Submit order request with farm details, livestock type, and quantity required. Emergency flag available for outbreak situations.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block pl-12">
+                                <p class="text-sa-gold font-bold text-lg">Step 1</p>
+                                <p class="text-stone-400 text-sm">Immediate acknowledgment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative scroll-reveal">
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-12 h-12 bg-sa-gold rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">2</div>
+                        <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                            <div class="hidden md:block pr-12 text-right">
+                                <p class="text-sa-gold font-bold text-lg">Within 4 Hours</p>
+                                <p class="text-stone-400 text-sm">Detailed pricing & availability</p>
+                            </div>
+                            <div class="md:pl-12">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-200 hover-lift inline-block">
+                                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600 text-xl mb-4">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-2">Quote & Availability</h3>
+                                    <p class="text-stone-600 text-sm">Receive detailed quotation including strain recommendations, dosage calculations, and delivery timeline within 4 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative scroll-reveal">
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-12 h-12 bg-sa-gold rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">3</div>
+                        <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                            <div class="md:text-right md:pr-12">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-200 hover-lift inline-block md:text-left">
+                                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-600 text-xl mb-4 md:ml-auto md:mr-0">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-2">Order Processing</h3>
+                                    <p class="text-stone-600 text-sm">Order confirmed and processed within 24 hours. Cold chain preparation initiated. Regulatory documentation prepared.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block pl-12">
+                                <p class="text-sa-gold font-bold text-lg">Within 24 Hours</p>
+                                <p class="text-stone-400 text-sm">Order confirmation & prep</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative scroll-reveal">
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-12 h-12 bg-sa-gold rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">4</div>
+                        <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                            <div class="hidden md:block pr-12 text-right">
+                                <p class="text-sa-gold font-bold text-lg">1-3 Days</p>
+                                <p class="text-stone-400 text-sm">Nationwide delivery</p>
+                            </div>
+                            <div class="md:pl-12">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-200 hover-lift inline-block">
+                                    <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green text-xl mb-4">
+                                        <i class="fas fa-truck-loading"></i>
+                                    </div>
+                                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-2">Cold Chain Delivery</h3>
+                                    <p class="text-stone-600 text-sm">Refrigerated transport with GPS tracking. 24-48 hours in outbreak zones (Gauteng, KZN, Eastern Cape), 1-3 days national.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="relative scroll-reveal">
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-12 h-12 bg-sa-gold rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold">5</div>
+                        <div class="md:grid md:grid-cols-2 gap-8 items-center">
+                            <div class="md:text-right md:pr-12">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-200 hover-lift inline-block md:text-left">
+                                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 text-xl mb-4 md:ml-auto md:mr-0">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <h3 class="font-serif text-xl font-bold text-sa-dark mb-2">Follow-up Support</h3>
+                                    <p class="text-stone-600 text-sm">Technical follow-up 7 days post-delivery. Protocol guidance, dosage verification, and vaccination monitoring support provided.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block pl-12">
+                                <p class="text-sa-gold font-bold text-lg">Day 7</p>
+                                <p class="text-stone-400 text-sm">Technical check-in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section id="compliance" class="py-24 bg-sa-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z&quot; fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot; fill-rule=&quot;evenodd&quot;/%3E%3C/svg%3E');"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="text-sa-gold font-semibold tracking-wider text-sm uppercase">Regulatory Compliance</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mt-3 mb-6">Licensed & Certified Distribution</h2>
+                    <p class="text-stone-300 text-lg mb-8 leading-relaxed">
+                        Full compliance with South African veterinary medicine regulations. We operate under strict DAFF oversight with complete traceability documentation for every vaccine dose distributed.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <i class="fas fa-certificate text-sa-gold text-3xl mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">DAFF Licensed</h4>
+                            <p class="text-stone-400 text-sm">Department of Agriculture, Forestry & Fisheries approved distributor under Act 36 of 1947.</p>
+                        </div>
+                        
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <i class="fas fa-microscope text-sa-gold text-3xl mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">ARC Partnership</h4>
+                            <p class="text-stone-400 text-sm">Sourcing through Agricultural Research Council Onderstepoort Veterinary Institute.</p>
+                        </div>
+                        
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <i class="fas fa-award text-sa-gold text-3xl mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">ISO 9001</h4>
+                            <p class="text-stone-400 text-sm">Certified logistics and quality management systems for pharmaceutical handling.</p>
+                        </div>
+                        
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <i class="fas fa-file-contract text-sa-gold text-3xl mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Animal Diseases Act</h4>
+                            <p class="text-stone-400 text-sm">Full compliance with Act 35 of 1984 regulations for FMD control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal">
+                    <div class="bg-white text-sa-dark p-8 rounded-3xl shadow-2xl">
+                        <h3 class="font-serif text-2xl font-bold mb-6 text-center">Traceability Documentation</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-barcode text-sa-green"></i>
+                                    <span class="font-medium">Batch Registration</span>
+                                </div>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-thermometer-half text-blue-500"></i>
+                                    <span class="font-medium">Temperature Logs</span>
+                                </div>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-route text-purple-500"></i>
+                                    <span class="font-medium">Chain of Custody</span>
+                                </div>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-syringe text-amber-500"></i>
+                                    <span class="font-medium">Vaccination Records</span>
+                                </div>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-sa-green/10 rounded-xl border border-sa-green/20">
+                            <p class="text-sm text-sa-green text-center font-medium">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                All documentation submitted to DAFF for outbreak monitoring and control
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Order Section -->
+    <section id="contact" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="scroll-reveal">
+                    <span class="text-sa-green font-semibold tracking-wider text-sm uppercase">Contact Us</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-sa-dark mt-3 mb-6">Request Vaccine Quote</h2>
+                    <p class="text-stone-600 text-lg mb-8">
+                        Submit your requirements for rapid quotation. For emergency outbreak situations, please indicate urgency in your message.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sa-dark">Emergency Hotline</p>
+                                <p class="text-stone-600">0800 VET FMD (0800 838 363)</p>
+                                <p class="text-xs text-stone-500">24/7 Outbreak Response</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sa-dark">Email</p>
+                                <p class="text-stone-600">orders@vetdistribute.co.za</p>
+                                <p class="text-xs text-stone-500">Quotes within 4 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sa-dark">Distribution Center</p>
+                                <p class="text-stone-600">Pretoria, Gauteng</p>
+                                <p class="text-xs text-stone-500">Servicing all SA provinces</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-sa-green/10 rounded-xl flex items-center justify-center text-sa-green shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sa-dark">Operating Hours</p>
+                                <p class="text-stone-600">Mon-Fri: 06:00 - 22:00</p>
+                                <p class="text-stone-600">Sat-Sun: 08:00 - 18:00 (Outbreak Only)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal">
+                    <form class="bg-white p-8 rounded-3xl shadow-xl border border-stone-200 space-y-6" onsubmit="event.preventDefault(); alert('Demo: Form submission simulated. In production, this would send to VetDistribute SA.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Farm/Business Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="Enter farm name" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Contact Person</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="Full name" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="email@farm.co.za" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="+27 __ ___ ____" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Province</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" required>
+                                    <option value="">Select Province</option>
+                                    <option value="gauteng">Gauteng</option>
+                                    <option value="kwazulu-natal">KwaZulu-Natal</option>
+                                    <option value="eastern-cape">Eastern Cape</option>
+                                    <option value="limpopo">Limpopo</option>
+                                    <option value="mpumalanga">Mpumalanga</option>
+                                    <option value="north-west">North West</option>
+                                    <option value="free-state">Free State</option>
+                                    <option value="northern-cape">Northern Cape</option>
+                                    <option value="western-cape">Western Cape</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-sa-dark mb-2">Livestock Type</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" required>
+                                    <option value="">Select Type</option>
+                                    <option value="cattle">Cattle</option>
+                                    <option value="sheep">Sheep</option>
+                                    <option value="goats">Goats</option>
+                                    <option value="pigs">Pigs</option>
+                                    <option value="mixed">Mixed Herd</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-sa-dark mb-2">Required Strains (Select all that apply)</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <label class="flex items-center space-x-2 p-3 border border-stone-300 rounded-lg cursor-pointer hover:bg-stone-50 transition">
+                                    <input type="checkbox" class="w-4 h-4 text-sa-green rounded">
+                                    <span class="text-sm">SAT1</span>
+                                </label>
+                                <label class="flex items-center space-x-2 p-3 border border-stone-300 rounded-lg cursor-pointer hover:bg-stone-50 transition">
+                                    <input type="checkbox" class="w-4 h-4 text-sa-green rounded">
+                                    <span class="text-sm">SAT2</span>
+                                </label>
+                                <label class="flex items-center space-x-2 p-3 border border-stone-300 rounded-lg cursor-pointer hover:bg-stone-50 transition">
+                                    <input type="checkbox" class="w-4 h-4 text-sa-green rounded">
+                                    <span class="text-sm">SAT3</span>
+                                </label>
+                                <label class="flex items-center space-x-2 p-3 border border-stone-300 rounded-lg cursor-pointer hover:bg-stone-50 transition">
+                                    <input type="checkbox" class="w-4 h-4 text-sa-green rounded">
+                                    <span class="text-sm">O Strain</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-sa-dark mb-2">Estimated Quantity (doses)</label>
+                            <input type="number" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="Number of doses required" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-sa-dark mb-2">Additional Requirements</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 outline-none transition" placeholder="Emergency outbreak situation? Specific delivery instructions?"></textarea>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="emergency" class="w-5 h-5 text-red-600 rounded border-stone-300 focus:ring-red-500">
+                            <label for="emergency" class="text-sm font-semibold text-red-600">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>This is an EMERGENCY outbreak order requiring 24-48h delivery
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-sa-green text-white font-bold py-4 rounded-xl hover:bg-sa-green/90 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                            <span>Request Quote</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+
+                        <p class="text-xs text-stone-500 text-center">
+                            By submitting, you confirm you are a registered farmer or veterinary professional in South Africa.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sa-dark text-stone-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-sa-green rounded-lg flex items-center justify-center text-white">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white">VetDistribute SA</h3>
+                            <p class="text-xs text-sa-gold">LICENSED FMD VACCINE DISTRIBUTORS</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-md">
+                        Licensed distributor of Foot-and-Mouth Disease vaccines for the South African agricultural sector. DAFF approved, ARC partnered, fully compliant with Animal Diseases Act 35 of 1984.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-sa-gold transition">Our Services</a></li>
+                        <li><a href="#strains" class="hover:text-sa-gold transition">Vaccine Strains</a></li>
+                        <li><a href="#process" class="hover:text-sa-gold transition">How It Works</a></li>
+                        <li><a href="#compliance" class="hover:text-sa-gold transition">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sa-gold transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sa-gold transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sa-gold transition">DAFF Registration</a></li>
+                        <li class="pt-2 border-t border-white/10 mt-2">
+                            <span class="text-xs text-stone-500">We do not vaccinate animals</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2024 VetDistribute SA. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <span class="text-xs bg-sa-green/20 text-sa-green px-3 py-1 rounded-full">DAFF Licensed</span>
+                    <span class="text-xs bg-sa-gold/20 text-sa-gold px-3 py-1 rounded-full">ISO 9001</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add shadow to nav on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
